@@ -3,7 +3,7 @@ const FRONT = 'card_front';
 const BACK = 'card_back';
 const CARD = 'card';
 const ICON = 'icon';
-
+const gameBoard = document.querySelector('#gameBoard');
 
 startGame();
 
@@ -15,7 +15,6 @@ function startGame() {
 }
 
 function initializeCards(cards) {
-    let gameBoard = document.querySelector('#gameBoard');
     gameBoard.innerHTML = '';
 
     game.cards.forEach(card => {

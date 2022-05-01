@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #c7cdd3;
+    background-color: #0d64bb;
 }
 
 .card {
@@ -39,14 +39,14 @@ body {
 }
 
 .card_front {
-    background-color: #101c2c;
+    background-color: #acb1b8;
     transform: rotatey(180deg);
 }
 
 .card_back {
-    background-color: #05c3ff;
+    background-color: rgb(8, 8, 8);
     font-size: 50px;
-    color: #101c2c;
+    color: #f5f5f5;
     /* display: none; */
 }
 
