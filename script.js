@@ -4,11 +4,14 @@ const BACK = 'card_back';
 const CARD = 'card';
 const ICON = 'icon';
 const gameBoard = document.querySelector('#gameBoard');
+const jogadas = document.querySelector('#jogadas');
+let contador = 0;
 
 startGame();
 
-function startGame() {
 
+
+function startGame() {
     initializeCards(game.createCardFromTechs());
     console.log(game.cards);
 
@@ -51,12 +54,14 @@ function createCardFace(face, card, element) {
 }
 
 function flipCard() {
-
+    points();
     if (game.setCard(this.id)) {
 
         this.classList.add('flip');
         if (game.secondCard) {
+            contador++;
             if (game.checkMatch()) {
+
                 game.clearCards();
                 if (game.checkGameOver()) {
                     let gameOverLayer = document.getElementById('gameOver');
@@ -70,6 +75,7 @@ function flipCard() {
 
                     firstCardView.classList.remove('flip');
                     secondCardView.classList.remove('flip');
+
                     game.unflipCards();
                 }, 1000)
 
@@ -83,4 +89,10 @@ function restart() {
     startGame();
     let gameOverLayer = document.getElementById('gameOver');
     gameOverLayer.style.display = 'none';
+    contador = 0;
+    points()
+}
+
+function points() {
+    jogadas.innerHTML = contador
 }
